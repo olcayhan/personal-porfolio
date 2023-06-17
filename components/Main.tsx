@@ -1,0 +1,39 @@
+import Image from "next/image";
+import mypic from "../public/images/image.jpg";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+
+export default function Main() {
+  return (
+    <div className="w-4/6 mx-auto mt-32 h-[200vh]">
+      <div className="flex flex-col 2xl:flex-row justify-center items-center gap-10">
+        <div className="flex flex-row justify-center items-center w-full">
+          <Image src={mypic} alt="image" className="w-80 h-80 rounded-md" />
+        </div>
+        <div className="flex flex-col items-center justify-center w-full">
+          <h1 className="text-6xl font-extrabold text-center">
+            Full Stack Developer
+          </h1>
+          <p className="py-4 text-md opacity-80 text-center">
+            I'm Olcay Han. I'm passionate about Web Development
+          </p>
+          <div className="flex flex-row items-center justify-center gap-8 py-4">
+            <a
+              className="flex flex-row gap-2 items-center justify-center hover:underline"
+              href="https://www.linkedin.com/in/olcayhan/"
+            >
+              <AiFillLinkedin size={30} />
+              <p className="font-semibold transition">Linkedin</p>
+            </a>
+            <a
+              className="flex flex-row gap-2 items-center justify-center hover:underline"
+              href="https://github.com/olcayhan"
+            >
+              <AiFillGithub size={30} />
+              <p className="font-semibold">Github</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
