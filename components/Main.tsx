@@ -4,10 +4,13 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 export default function Main() {
   return (
-    <div className="w-4/6 mx-auto mt-32 h-[200vh]">
+    <section
+      id="home"
+      className="flex flex-col justify-center items-center w-4/6 mx-auto min-h-screen py-16"
+    >
       <div className="flex flex-col 2xl:flex-row justify-center items-center gap-10">
         <div className="flex flex-row justify-center items-center w-full">
-          <Image src={mypic} alt="image" className="w-80 h-80 rounded-md" />
+          <Image src={mypic} alt="image" className="w-72 h-72 rounded-md" />
         </div>
         <div className="flex flex-col items-center justify-center w-full">
           <h1 className="text-6xl font-extrabold text-center">
@@ -34,6 +37,6 @@ export default function Main() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
