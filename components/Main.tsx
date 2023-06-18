@@ -17,7 +17,7 @@ export default function Main() {
             Full Stack Developer
           </h1>
           <p className="py-4 text-md opacity-80 text-center">
-            I'm Olcay Han. I'm passionate about Web Development
+            I&apos;m Olcay Han. I&apos;m passionate about Web Development
           </p>
           <div className="flex flex-row items-center justify-center gap-8 py-4">
             <a

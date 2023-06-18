@@ -14,13 +14,13 @@ export default function About() {
           <h1 className="text-blue-600 text-lg font-extrabold">ABOUT ME</h1>
           <h1 className="text-3xl font-extrabold">Full Stack Developer</h1>
           <p className="text-md opacity-90">
-            I'm Olcay Han, I am currently a Computer Engineering student at
-            Bandırma 17 Eylül University in Turkey. I'm passionate about Web
+            I&apos;m Olcay Han, I am currently a Computer Engineering student at
+            Bandırma 17 Eylül University in Turkey. I&apos;m passionate about Web
             Development, I am coding with React, Javascript, Node.js and Python.
-            <br />I am a passionate person and I'm hungry to learn new things. I
-            have powerful observing and Problem Solving skills. I have some
-            projects with Javascript, React.js and Python. You can see that in
-            my GitHub profile.
+            <br />I am a passionate person and I&apos;m hungry to learn new
+            things. I have powerful observing and Problem Solving skills. I have
+            some projects with Javascript, React.js and Python. You can see that
+            in my GitHub profile.
           </p>
         </div>
       </div>

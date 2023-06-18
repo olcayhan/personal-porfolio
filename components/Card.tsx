@@ -11,8 +11,8 @@ export default function Card() {
       <div className="flex flex-col justify-center items-center gap-4 w-full">
         <h1 className="text-lg font-extrabold">CAR RENTAL</h1>
         <p className="text-md opacity-90">
-          I'm Olcay Han, I am currently a Computer Engineering student at
-          Bandırma 17 Eylül University in Turkey. I'm passionate about Web
+          I&apos;m Olcay Han, I am currently a Computer Engineering student at
+          Bandırma 17 Eylül University in Turkey. I&apos;m passionate about Web
           Development, I am coding with React, Javascript, Node.js and Python.
         </p>
         <div className="flex flex-row items-center justify-center gap-4">
