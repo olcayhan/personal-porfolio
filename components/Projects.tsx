@@ -3,6 +3,7 @@ import quizlang from "../public/images/quizlang.png";
 import flickter from "../public/images/flickter.png";
 import movieapp from "../public/images/movieapp.png";
 import todoapp from "../public/images/todoapp.png";
+import billtrack from "../public/images/bill-track.png";
 
 export default function Projects() {
   return (
@@ -30,6 +31,14 @@ export default function Projects() {
           languages={["Next.js", "Tailwind"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="Twitter Clone"
+        />
+        <Card
+          image={billtrack}
+          url="https://github.com/olcayhan/fatura-takip-client"
+          href="https://bill-track.vercel.app/login"
+          languages={["React.js", "Bootstrap", "CSS"]}
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          title="Bill Tracking Service"
         />
         <Card
           image={movieapp}
