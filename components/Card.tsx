@@ -1,42 +1,64 @@
-import Image from "next/image";
-import pic from "../public/images/about.png";
+import Image, { StaticImageData } from "next/image";
 import { AiFillGithub } from "react-icons/ai";
+import { BsBoxArrowInUpRight } from "react-icons/bs";
 
-export default function Card() {
+interface CardProps {
+  url: string;
+  image: StaticImageData;
+  href?: string;
+  languages: string[];
+  title: string;
+  desc: string;
+}
+
+const Card: React.FC<CardProps> = ({
+  url,
+  image,
+  title,
+  href,
+  languages,
+  desc,
+}) => {
   return (
     <div className="flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] p-10 shadow-2xl">
       <div className="flex flex-row justify-center items-center w-full">
-        <Image src={pic} alt="image" className="w-72 h-72 rounded-md" />
+        <Image src={image} alt="image" className="w-72 h-72 rounded-md" />
       </div>
       <div className="flex flex-col justify-center items-center gap-4 w-full">
-        <h1 className="text-lg font-extrabold">CAR RENTAL</h1>
-        <p className="text-md opacity-90">
-          I&apos;m Olcay Han, I am currently a Computer Engineering student at
-          Bandırma 17 Eylül University in Turkey. I&apos;m passionate about Web
-          Development, I am coding with React, Javascript, Node.js and Python.
-        </p>
+        <h1 className="text-lg font-extrabold">{title}</h1>
+        <p className="text-md opacity-90">{desc}</p>
         <div className="flex flex-row items-center justify-center gap-4">
-          <p className="font-extrabold text-md">React</p>
-          <p className="font-extrabold text-md">React</p>
+          {languages.map((item, key) => {
+            return (
+              <p key={key} className="font-extrabold text-md">
+                {item}
+              </p>
+            );
+          })}
         </div>
 
         <div className="flex flex-row items-center justify-center gap-16 p-6">
           <a
             className="flex flex-row gap-2 items-center justify-center hover:underline"
-            href="https://github.com/olcayhan"
+            href={url}
+            target="_blank"
           >
             <AiFillGithub size={30} />
             <p className="font-extrabold text-lg">Code</p>
           </a>
-          <a
-            className="flex flex-row gap-2 items-center justify-center hover:underline"
-            href="https://github.com/olcayhan"
-          >
-            <AiFillGithub size={30} />
-            <p className="font-extrabold text-lg">Code</p>
-          </a>
+          {href && (
+            <a
+              className="flex flex-row gap-2 items-center justify-center hover:underline"
+              href={href}
+              target="_blank"
+            >
+              <BsBoxArrowInUpRight size={30} />
+              <p className="font-extrabold text-lg">Demo</p>
+            </a>
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
+export default Card;
