@@ -2,7 +2,6 @@ import Card from "./Card";
 import quizlang from "../public/images/quizlang.png";
 import flickter from "../public/images/flickter.png";
 import movieapp from "../public/images/movieapp.png";
-import newsweb from "../public/images/news.png";
 import todoapp from "../public/images/todoapp.png";
 
 export default function Projects() {
@@ -46,14 +45,6 @@ export default function Projects() {
           languages={["React.js", "Bootstrap", "CSS"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="TodoApp"
-        />
-        <Card
-          image={newsweb}
-          href="https://newswebsite-demo.vercel.app/"
-          url="https://github.com/olcayhan/news-website"
-          languages={["React.js", "Bootstrap", "CSS"]}
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
-          title="News Website"
         />
       </div>
     </section>
