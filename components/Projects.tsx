@@ -34,7 +34,7 @@ export default function Projects() {
         />
         <Card
           image={billtrack}
-          url="https://github.com/olcayhan/fatura-takip-client"
+          url="https://github.com/olcayhan/bill-tracking"
           href="https://bill-track.vercel.app/login"
           languages={["React.js", "Bootstrap", "CSS"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
