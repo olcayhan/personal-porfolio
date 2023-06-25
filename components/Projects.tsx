@@ -51,6 +51,7 @@ export default function Projects() {
         <Card
           image={todoapp}
           url="https://github.com/olcayhan/TodoApp"
+          href="https://todoapp-demo-olcayhank.vercel.app/"
           languages={["React.js", "Bootstrap", "CSS"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="TodoApp"
