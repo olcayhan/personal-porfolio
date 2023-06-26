@@ -23,6 +23,7 @@ export default function Main() {
             <a
               className="flex flex-row gap-2 items-center justify-center hover:underline"
               href="https://www.linkedin.com/in/olcayhan/"
+              target="_blank"
             >
               <AiFillLinkedin size={30} />
               <p className="font-semibold transition">Linkedin</p>
@@ -30,6 +31,7 @@ export default function Main() {
             <a
               className="flex flex-row gap-2 items-center justify-center hover:underline"
               href="https://github.com/olcayhan"
+              target="_blank"
             >
               <AiFillGithub size={30} />
               <p className="font-semibold">Github</p>
