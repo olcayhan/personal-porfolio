@@ -22,7 +22,7 @@ export default function Projects() {
           href="https://quizlang.vercel.app/auth"
           languages={["Next.js", "Tailwind"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
-          title="Quizlang"
+          title="Quizlet Clone"
         />
         <Card
           image={flickter}
@@ -36,7 +36,7 @@ export default function Projects() {
           image={billtrack}
           url="https://github.com/olcayhan/bill-tracking"
           href="https://bill-track.vercel.app/login"
-          languages={["React.js", "Bootstrap", "CSS"]}
+          languages={["React.js", "Bootstrap", "CSS", "Node.js"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="Bill Tracking Service"
         />
@@ -52,7 +52,7 @@ export default function Projects() {
           image={todoapp}
           url="https://github.com/olcayhan/TodoApp"
           href="https://todoapp-demo-olcayhank.vercel.app/"
-          languages={["React.js", "Tailwind"]}
+          languages={["React.js", "Tailwind", "Node.js"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="TodoApp"
         />
