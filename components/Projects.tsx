@@ -19,7 +19,7 @@ export default function Projects() {
         <Card
           image={quizlang}
           url="https://github.com/olcayhan/quizlet-clone"
-          href="https://quizlang.vercel.app/auth"
+          href="https://quizlang.vercel.app/"
           languages={["Next.js", "Tailwind"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="Quizlet Clone"
@@ -35,7 +35,7 @@ export default function Projects() {
         <Card
           image={billtrack}
           url="https://github.com/olcayhan/bill-tracking"
-          href="https://bill-track.vercel.app/login"
+          href="https://bill-track.vercel.app/"
           languages={["React.js", "Bootstrap", "CSS", "Node.js"]}
           desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
           title="Bill Tracking Service"
