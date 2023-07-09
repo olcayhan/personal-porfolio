@@ -4,7 +4,7 @@ import flickter from "../public/images/flickter.png";
 import movieapp from "../public/images/movieapp.png";
 import todoapp from "../public/images/todoapp.png";
 import billtrack from "../public/images/bill-track.png";
-
+import calculator from "../public/images/calculator.png";
 export default function Projects() {
   return (
     <section
@@ -16,6 +16,14 @@ export default function Projects() {
         <h1 className="text-3xl font-extrabold">All my projects is here</h1>
       </div>
       <div className="flex flex-col justify-center items-center gap-16">
+        <Card
+          image={calculator}
+          url="https://github.com/olcayhan/calculatorApp"
+          href="https://calculator-app-demo.vercel.app/"
+          languages={["Angular.js", "CSS"]}
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          title="Calculator App"
+        />
         <Card
           image={quizlang}
           url="https://github.com/olcayhan/quizlet-clone"
