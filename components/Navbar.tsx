@@ -1,13 +1,27 @@
 "use client";
 
 import { FaBars } from "react-icons/fa";
-import { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import { AiOutlineArrowUp, AiOutlineClose } from "react-icons/ai";
 
 export default function Navbar() {
   const [isMobile, setMobile] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  console.log(isMobile);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.scrollY || window.pageYOffset;
+      setScrollPosition(currentPosition);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <div className="hidden md:block fixed top-0 w-full bg-neutral-50 z-50">
@@ -119,6 +133,24 @@ export default function Navbar() {
           />
         )}
       </div>
+
+      <button
+        className={`
+        ${scrollPosition > 100 ? "block" : "hidden"}
+        fixed 
+        right-5 
+        bottom-5 
+        z-49 
+        cursor-pointer 
+        border-neutral-800 
+        border-[1px] 
+        p-2 
+        rounded-md
+        `}
+        onClick={() => window.scrollTo(0, 0)}
+      >
+        <AiOutlineArrowUp size={30} />
+      </button>
     </>
   );
 }
