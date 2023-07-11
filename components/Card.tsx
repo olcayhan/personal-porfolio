@@ -1,10 +1,14 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BsBoxArrowInUpRight } from "react-icons/bs";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 interface CardProps {
   url: string;
-  image: StaticImageData;
+  images: StaticImageData[];
   href?: string;
   languages: string[];
   title: string;
@@ -13,16 +17,52 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({
   url,
-  image,
+  images,
   title,
   href,
   languages,
   desc,
 }) => {
+  const [imgIndex, setImgIndex] = useState(0);
+
   return (
     <div className="flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] p-10 shadow-2xl">
-      <div className="flex flex-row justify-center items-center w-full">
-        <Image src={image} alt="image" className="w-72 h-72 rounded-md" />
+      <div className="flex flex-row justify-center items-center w-full gap-5">
+        <button
+          disabled={imgIndex <= 0}
+          onClick={() => {
+            imgIndex > 0 && setImgIndex(imgIndex - 1);
+          }}
+          className={`
+          ${imgIndex <= 0 && "opacity-40"}
+            border-[1px]
+           border-neutral-700 
+            p-1 
+            rounded-md 
+            bg-transparent`}
+        >
+          <MdKeyboardArrowLeft size={30} />
+        </button>
+        <Image
+          src={images[imgIndex]}
+          alt="image"
+          className="md:w-96 md:h-96 w-60 h-60 rounded-md"
+        />
+        <button
+          disabled={images.length <= imgIndex + 1}
+          onClick={() => {
+            setImgIndex(imgIndex + 1);
+          }}
+          className={`
+          ${images.length <= imgIndex + 1 && "opacity-40"}
+            border-[1px]
+           border-neutral-700 
+            p-1 
+            rounded-md 
+            bg-transparent`}
+        >
+          <MdKeyboardArrowRight size={30} />
+        </button>
       </div>
       <div className="flex flex-col justify-center items-center gap-4 w-full">
         <h1 className="text-lg font-extrabold">{title}</h1>
