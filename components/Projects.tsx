@@ -19,6 +19,11 @@ import billtrack2 from "../public/images/bill-track/bill-track2.png";
 import billtrack3 from "../public/images/bill-track/bill-track3.png";
 import billtrack4 from "../public/images/bill-track/bill-track4.png";
 
+import flickter1 from "../public/images/flickter/flickter1.png";
+import flickter2 from "../public/images/flickter/flickter2.png";
+import flickter3 from "../public/images/flickter/flickter3.png";
+import flickter4 from "../public/images/flickter/flickter4.png";
+
 export default function Projects() {
   return (
     <section
@@ -30,6 +35,14 @@ export default function Projects() {
         <h1 className="text-3xl font-extrabold">All my projects is here</h1>
       </div>
       <div className="flex flex-col justify-center items-center gap-16">
+        <Card
+          images={[flickter1, flickter2, flickter3, flickter4]}
+          url="https://github.com/olcayhan/twitter-clone"
+          href="https://flickter.vercel.app/"
+          languages={["Next.js", "Tailwind"]}
+          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          title="Flickter - Twitter Clone"
+        />
         <Card
           images={[quizlang, quizlang2, quizlang3, quizlang4]}
           url="https://github.com/olcayhan/quizlet-clone"
