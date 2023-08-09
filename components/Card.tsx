@@ -1,7 +1,8 @@
 "use client";
 
+import useObserver from "@/hooks/useObserver";
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BsBoxArrowInUpRight } from "react-icons/bs";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
@@ -24,9 +25,16 @@ const Card: React.FC<CardProps> = ({
   desc,
 }) => {
   const [imgIndex, setImgIndex] = useState(0);
+  const targetRef = useRef(null);
+  const show = useObserver(targetRef);
 
   return (
-    <div className="flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] p-10 shadow-2xl">
+    <div
+      className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] p-10 shadow-2xl transition-all duration-500 ${
+        show ? "opacity-100" : "opacity-0"
+      }`}
+      ref={targetRef}
+    >
       <div className="flex flex-row justify-center items-center w-full gap-5">
         <button
           disabled={imgIndex <= 0}

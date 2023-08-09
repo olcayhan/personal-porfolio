@@ -6,12 +6,11 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
 
-
   return (
     <>
       <Navbar />
       <Main />
-      <About />
+      <About/>
       <Projects />
       <Contact />
     </>
