@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio
 
-## Getting Started
+This repository contains a basic template for creating a personal portfolio. You can use this template to build your portfolio and showcase your personal projects.
 
-First, run the development server:
+<img src='https://github.com/olcayhan/personal-porfolio/assets/71206063/aa4948de-ccaf-48eb-b72c-597cb6036890' width='500px'/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Website Link: https://olcayhankorkut.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Clean and simple design.
+- Editable personal information (name, description, social media links, etc.).
+- Showcasing project examples.
+- Adding project descriptions and technologies.
+- Responsive design for mobile compatibility.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+1. To use this template, you need to fork the project to your own account. You can do this by clicking the "Fork" button at the top right corner.
 
-To learn more about Next.js, take a look at the following resources:
+2. Edit the "index.html" file to add your own projects and information. You can also modify the page's style by editing the "style.css" file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. While working on the project, you can open the "index.html" file in your browser to preview the changes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Remember to commit your changes regularly as you make edits and add new features.
 
-## Deploy on Vercel
+## Contribution
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! If you want to report issues, suggest improvements, or make changes to this project, feel free to submit a Pull Request.
