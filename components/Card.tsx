@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] p-10 shadow-2xl transition-all duration-500 ${
-        show ? "opacity-100" : "opacity-0"
+        show ? "opacity-100" : "opacity-10"
       }`}
       ref={targetRef}
     >

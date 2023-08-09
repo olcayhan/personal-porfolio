@@ -1,21 +1,29 @@
-'use client'
-import {useRef} from 'react';
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
-import mypic from "../public/images/image.jpg";
+import mypic from "../public/images/image.png";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
-import useObserver from '@/hooks/useObserver';
+import useObserver from "@/hooks/useObserver";
 
 export default function Main() {
   const targetRef = useRef(null);
-  const show = useObserver(targetRef)
+  const show = useObserver(targetRef);
   return (
     <section
       id="home"
       className="flex flex-col justify-center items-center w-4/6 mx-auto min-h-screen py-16"
     >
-      <div className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 ${show ? 'opacity-100' : 'opacity-0'} transition-all duration-500`} ref={targetRef}>
+      <div
+        className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 ${
+          show ? "opacity-100" : "opacity-0"
+        } transition-all duration-500`}
+        ref={targetRef}
+      >
         <div className="flex flex-row justify-center items-center w-full">
-          <Image src={mypic} alt="image" className="w-72 h-72 rounded-md" />
+          <div className="w-72 h-72 rounded-full bg-blue-600 relative">
+            <Image src={mypic} alt="image" className="w-72 h-72 rounded-full" />
+            <div className="border-[4px] border-black rounded-full w-full h-full absolute top-0 left-0 animate-waving-hand"></div>
+          </div>
         </div>
         <div className="flex flex-col items-center justify-center w-full">
           <h1 className="text-6xl font-extrabold text-center">

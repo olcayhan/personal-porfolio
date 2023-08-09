@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
-import pic from "../public/images/about.png";
+import pic from "../public/images/about.gif";
 import useObserver from "@/hooks/useObserver";
 export default function About() {
   const targetRef = useRef(null);
@@ -12,12 +12,10 @@ export default function About() {
       className="flex flex-row justify-center items-center w-4/6 mx-auto min-h-screen py-16 overflow-hidden"
     >
       <div
-        className="flex flex-col 2xl:flex-row justify-center items-center gap-10"
+        className="flex flex-col 2xl:flex-row justify-center items-center gap-5"
         ref={targetRef}
       >
-        <div
-          className={`flex flex-row justify-center items-center w-full`}
-        >
+        <div className={`flex flex-row justify-center items-center w-full`}>
           <Image src={pic} alt="image" className="w-72 h-72 rounded-md" />
         </div>
         <div className="flex flex-col justify-center gap-4 w-full">
