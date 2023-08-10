@@ -40,7 +40,7 @@ export default function Projects() {
           url="https://github.com/olcayhan/twitter-clone"
           href="https://flickter.vercel.app/"
           languages={["Next.js", "Tailwind"]}
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          desc="This repository contains a simple Twitter clone project, aiming to replicate some of the basic features and functionality of the Twitter platform."
           title="Flickter - Twitter Clone"
         />
         <Card
@@ -48,7 +48,7 @@ export default function Projects() {
           url="https://github.com/olcayhan/quizlet-clone"
           href="https://quizlang.vercel.app/"
           languages={["Next.js", "Tailwind"]}
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          desc="Quizlet Clone is a web application that resembles the original Quizlet platform, allowing users to create, share, and learn digital flashcards. This document outlines the necessary steps to run, deploy, and use the Quizlet Clone project."
           title="Quizlet Clone"
         />
 
@@ -57,7 +57,7 @@ export default function Projects() {
           url="https://github.com/olcayhan/TodoApp"
           href="https://todoapp-demo-olcayhank.vercel.app/"
           languages={["React.js", "Tailwind", "Node.js"]}
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          desc="TodoApp is a simple todo list application. With this app, you can easily keep track of your daily tasks, mark completed tasks, and add new tasks."
           title="TodoApp"
         />
         <Card
@@ -65,7 +65,7 @@ export default function Projects() {
           url="https://github.com/olcayhan/movie-app"
           href="https://movieapp-demo.vercel.app/"
           languages={["Angular.js", "Bootstrap", "CSS"]}
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          desc="Movie App is a web application that allows users to discover new movies, get information about films, and mark movies they want to watch."
           title="Movie App"
         />
         <Card
@@ -73,7 +73,7 @@ export default function Projects() {
           url="https://github.com/olcayhan/bill-tracking"
           href="https://bill-track.vercel.app/"
           languages={["React.js", "Bootstrap", "CSS", "Node.js"]}
-          desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eveniet? Sed distinctio cupiditate eaque provident rem perspiciatis similique dolorem deserunt!"
+          desc="This repository contains a Bill Tracking App, designed to help users manage and keep track of their bills and expenses effectively."
           title="Bill Tracking Service"
         />
       </div>
