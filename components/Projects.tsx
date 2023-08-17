@@ -19,10 +19,10 @@ import billtrack2 from "../public/images/bill-track/bill-track2.png";
 import billtrack3 from "../public/images/bill-track/bill-track3.png";
 import billtrack4 from "../public/images/bill-track/bill-track4.png";
 
-import flickter1 from "../public/images/flickter/flickter1.png";
-import flickter2 from "../public/images/flickter/flickter2.png";
-import flickter3 from "../public/images/flickter/flickter3.png";
-import flickter4 from "../public/images/flickter/flickter4.png";
+import calc1 from "../public/images/calculator/calc1.png";
+import calc2 from "../public/images/calculator/calc2.png";
+import calc3 from "../public/images/calculator/calc3.png";
+import calc4 from "../public/images/calculator/calc4.png";
 
 export default function Projects() {
   return (
@@ -35,14 +35,6 @@ export default function Projects() {
         <h1 className="text-3xl font-extrabold">All my projects is here</h1>
       </div>
       <div className="flex flex-col justify-center items-center gap-16">
-        <Card
-          images={[flickter1, flickter2, flickter3, flickter4]}
-          url="https://github.com/olcayhan/twitter-clone"
-          href="https://flickter.vercel.app/"
-          languages={["Next.js", "Tailwind"]}
-          desc="This repository contains a simple Twitter clone project, aiming to replicate some of the basic features and functionality of the Twitter platform."
-          title="Flickter - Twitter Clone"
-        />
         <Card
           images={[quizlang, quizlang2, quizlang3, quizlang4]}
           url="https://github.com/olcayhan/quizlet-clone"
@@ -64,7 +56,7 @@ export default function Projects() {
           images={[movieapp, movieapp2, movieapp3, movieapp4]}
           url="https://github.com/olcayhan/movie-app"
           href="https://movieapp-demo.vercel.app/"
-          languages={["Angular.js", "Bootstrap", "CSS"]}
+          languages={["Angular.js", "Bootstrap", "SCSS"]}
           desc="Movie App is a web application that allows users to discover new movies, get information about films, and mark movies they want to watch."
           title="Movie App"
         />
@@ -75,6 +67,14 @@ export default function Projects() {
           languages={["React.js", "Bootstrap", "CSS", "Node.js"]}
           desc="This repository contains a Bill Tracking App, designed to help users manage and keep track of their bills and expenses effectively."
           title="Bill Tracking Service"
+        />
+        <Card
+          images={[calc1, calc2, calc3, calc4]}
+          url="https://github.com/olcayhan/calculatorApp"
+          href="https://calculator-app-demo.vercel.app/"
+          languages={["Angular", "SCSS", "Bootstrap"]}
+          desc="This is a simple calculator app that allows you to perform basic mathematical operations between two numbers. You can perform addition, subtraction, multiplication, and division operations."
+          title="Calculator App"
         />
       </div>
     </section>
