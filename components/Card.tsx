@@ -1,29 +1,18 @@
 "use client";
 
+import { Project } from "@/data/project";
 import useObserver from "@/hooks/useObserver";
-import Image, { StaticImageData } from "next/image";
-import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import { useState, useRef } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BsBoxArrowInUpRight } from "react-icons/bs";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
-interface CardProps {
-  url: string;
-  images: StaticImageData[];
-  href?: string;
-  languages: string[];
-  title: string;
-  desc: string;
+interface Prop {
+  item: Project;
 }
 
-const Card: React.FC<CardProps> = ({
-  url,
-  images,
-  title,
-  href,
-  languages,
-  desc,
-}) => {
+const Card = ({ item }: Prop) => {
   const [imgIndex, setImgIndex] = useState(0);
   const targetRef = useRef(null);
   const show = useObserver(targetRef);
@@ -52,17 +41,17 @@ const Card: React.FC<CardProps> = ({
           <MdKeyboardArrowLeft size={30} />
         </button>
         <Image
-          src={images[imgIndex]}
+          src={item.images[imgIndex]}
           alt="image"
           className="md:w-96 md:h-96 w-60 h-60 rounded-md"
         />
         <button
-          disabled={images.length <= imgIndex + 1}
+          disabled={item.images.length <= imgIndex + 1}
           onClick={() => {
             setImgIndex(imgIndex + 1);
           }}
           className={`
-          ${images.length <= imgIndex + 1 && "opacity-40"}
+          ${item.images.length <= imgIndex + 1 && "opacity-40"}
             border-[1px]
            border-neutral-700 
             p-1 
@@ -73,10 +62,10 @@ const Card: React.FC<CardProps> = ({
         </button>
       </div>
       <div className="flex flex-col justify-center items-center gap-4 w-full">
-        <h1 className="text-lg font-extrabold">{title}</h1>
-        <p className="text-md opacity-90">{desc}</p>
+        <h1 className="text-lg font-extrabold">{item.title}</h1>
+        <p className="text-md opacity-90">{item.desc}</p>
         <div className="flex flex-row items-center justify-center gap-4">
-          {languages.map((item, key) => {
+          {item.languages.map((item, key) => {
             return (
               <p key={key} className="font-extrabold text-md">
                 {item}
@@ -88,16 +77,16 @@ const Card: React.FC<CardProps> = ({
         <div className="flex flex-row items-center justify-center gap-16 p-6">
           <a
             className="flex flex-row gap-2 items-center justify-center hover:underline"
-            href={url}
+            href={item.url}
             target="_blank"
           >
             <AiFillGithub size={30} />
             <p className="font-extrabold text-lg">Code</p>
           </a>
-          {href && (
+          {item.href && (
             <a
               className="flex flex-row gap-2 items-center justify-center hover:underline"
-              href={href}
+              href={item.href}
               target="_blank"
             >
               <BsBoxArrowInUpRight size={30} />
