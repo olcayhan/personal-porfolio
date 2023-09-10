@@ -21,7 +21,6 @@ export default function Navbar() {
     };
   }, []);
 
-
   return (
     <>
       <div className="hidden md:block fixed top-0 w-full bg-neutral-50 z-50">
