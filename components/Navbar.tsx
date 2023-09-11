@@ -1,12 +1,17 @@
 "use client";
+import Link from "next-intl/link";
 
 import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { AiOutlineArrowUp, AiOutlineClose } from "react-icons/ai";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Navbar() {
   const [isMobile, setMobile] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  const locale = useLocale();
+  const t = useTranslations("Navbar");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,18 +32,31 @@ export default function Navbar() {
         <div className="flex flex-row justify-between items-center px-24 py-5">
           <h1 className="font-extrabold text-2xl">Olcay.tech</h1>
           <div className="flex flex-row items-center justify-center gap-6">
-            <a className="font-bold text-lg" href="#home">
-              Home
+            <a className="font-bold text-lg  hover:scale-110" href="#home">
+              {t("home")}
             </a>
-            <a className="font-bold text-lg" href="#about">
-              About
+            <a className="font-bold text-lg  hover:scale-110" href="#about">
+              {t("about")}
             </a>
-            <a className="font-bold text-lg" href="#projects">
-              Projects
+            <a className="font-bold text-lg  hover:scale-110" href="#projects">
+              {t("projects")}
             </a>
-            <a className="font-bold text-lg" href="#contact">
-              Contact
+            <a className="font-bold text-lg  hover:scale-110" href="#contact">
+              {t("contact")}
             </a>
+            {locale == "tr" ? (
+              <Link
+                className="font-bold text-lg hover:scale-110"
+                href="/"
+                locale="en"
+              >
+                EN
+              </Link>
+            ) : (
+              <Link className="font-bold text-lg" href="/" locale="tr">
+                TR
+              </Link>
+            )}
           </div>
         </div>
       </div>

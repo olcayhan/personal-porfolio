@@ -1,14 +1,17 @@
 "use client";
-import { useRef } from "react";
 import Image from "next/image";
 import mypic from "../public/images/image.png";
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import useObserver from "@/hooks/useObserver";
-import { main } from "@/data/main";
+
+import { useRef } from "react";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { useTranslations } from "next-intl";
 
 export default function Main() {
   const targetRef = useRef(null);
   const show = useObserver(targetRef);
+
+  const t = useTranslations("Main");
   return (
     <section
       id="home"
@@ -27,8 +30,8 @@ export default function Main() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center w-full">
-          <h1 className="text-6xl font-extrabold text-center">{main.title}</h1>
-          <p className="py-4 text-md opacity-80 text-center">{main.content}</p>
+          <h1 className="text-6xl font-extrabold text-center">{t("title")}</h1>
+          <p className="py-4 text-md opacity-80 text-center">{t("content")}</p>
           <div className="flex flex-row items-center justify-center gap-8 py-4">
             <a
               className="flex flex-row gap-2 items-center justify-center hover:underline"

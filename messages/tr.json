@@ -1,0 +1,25 @@
+{
+    "Main":{
+        "title":"Yazılım Geliştirici",
+        "content":"Merhaba! Ben Olcay Han, 2 yıllık tecrübeye sahip yazılımcıyım."
+    },
+    "About":{
+        "header":"HAKKIMDA",
+        "title":"Yazılım Geliştirici",
+        "content":"Merhaba! Ben Olcay Han, 2 yıllık tecrübeye sahip yazılımcıyım. Kullanıcı dostu çözümler hedefleyerek web geliştirme ve yapay zeka konularında kendimi geliştirdim. En son teknoloji trendlerinden haberdar oluyorum ve ağ kurma fırsatlarını memnuniyetle karşılıyorum. Haydi bağlanalım ve olasılıkları keşfedelim!"
+    },
+    "Contact":{
+        "header":"İletişim",
+        "title":"Benimle iletişime geç"
+    },
+    "Projects":{
+        "header":"Projeler",
+        "title":"Tüm projelerim burada"
+    },
+    "Navbar":{
+        "home":"Ana Sayfa",
+        "about":"Hakkımda",
+        "projects":"Projeler",
+        "contact":"İletişim"
+    }
+}
