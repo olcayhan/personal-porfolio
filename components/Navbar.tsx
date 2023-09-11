@@ -86,7 +86,7 @@ export default function Navbar() {
                 setMobile(false);
               }}
             >
-              Home
+              {t("home")}
             </a>
             <a
               className="font-bold text-2xl"
@@ -95,7 +95,7 @@ export default function Navbar() {
                 setMobile(false);
               }}
             >
-              About
+              {t("about")}
             </a>
             <a
               className="font-bold text-2xl"
@@ -104,7 +104,7 @@ export default function Navbar() {
                 setMobile(false);
               }}
             >
-              Projects
+              {t("projects")}
             </a>
             <a
               className="font-bold text-2xl"
@@ -113,8 +113,22 @@ export default function Navbar() {
                 setMobile(false);
               }}
             >
-              Contact
+              {t("contact")}
             </a>
+            
+            {locale == "tr" ? (
+              <Link
+                className="font-bold text-lg hover:scale-110"
+                href="/"
+                locale="en"
+              >
+                EN
+              </Link>
+            ) : (
+              <Link className="font-bold text-lg" href="/" locale="tr">
+                TR
+              </Link>
+            )}
           </div>
         </div>
       </div>
