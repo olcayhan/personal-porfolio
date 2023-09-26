@@ -53,7 +53,11 @@ export default function Navbar() {
                 EN
               </Link>
             ) : (
-              <Link className="font-bold text-lg" href="/" locale="tr">
+              <Link
+                className="font-bold text-lg hover:scale-110"
+                href="/"
+                locale="tr"
+              >
                 TR
               </Link>
             )}
@@ -115,7 +119,7 @@ export default function Navbar() {
             >
               {t("contact")}
             </a>
-            
+
             {locale == "tr" ? (
               <Link
                 className="font-bold text-lg hover:scale-110"

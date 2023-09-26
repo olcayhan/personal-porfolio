@@ -15,7 +15,6 @@ const useObserver = (targetRef: any) => {
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
-          console.log("Element is now visible!");
           setShow(true);
         } else {
           setShow(false);
