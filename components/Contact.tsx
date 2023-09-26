@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col justify-center w-4/6 mx-auto min-h-screen py-16"
+      className="flex flex-col justify-center"
     >
       <div className="flex flex-col 2xl:flex-row justify-center items-center gap-10">
         <div className="flex flex-col justify-center gap-4 w-full">

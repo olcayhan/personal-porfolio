@@ -20,7 +20,12 @@
     "Navbar":{
         "home":"Home",
         "about":"About",
+        "skills":"Skills",
         "projects":"Projects",
         "contact":"Contact"
+    },
+    "Skills":{
+        "title":"Skills",
+        "desc":"All My Skills is Here"
     }
 }

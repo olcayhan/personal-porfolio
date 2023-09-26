@@ -2,8 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .pause {
+    animation-play-state: paused;
+  }
+}
+
 html,
 body,
 :root {
   scroll-behavior: smooth;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 200px 150px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding: 100px;
+  }
+  section {
+    padding: 50px 20px;
+  }
 }

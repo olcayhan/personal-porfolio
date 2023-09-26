@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col justify-center items-center w-4/6 mx-auto min-h-screen py-16"
+      className="flex flex-col justify-center items-center"
     >
       <div className="flex flex-col justify-center gap-2 w-full py-10">
         <h1 className="text-blue-600 text-lg font-extrabold">{t("header")}</h1>

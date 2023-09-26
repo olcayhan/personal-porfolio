@@ -15,7 +15,7 @@ export default function Main() {
   return (
     <section
       id="home"
-      className="flex flex-col justify-center items-center w-4/6 mx-auto min-h-screen py-16"
+      className="flex flex-col justify-center items-center"
     >
       <div
         className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 ${

@@ -18,10 +18,16 @@ module.exports = {
           "60%": { transform: "skew(0.0deg)" },
           "100%": { transform: "skew(0.0deg)" },
         },
+        comeback: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% / 2))" },
+        },
       },
       animation: {
         "waving-hand": "wave 10s linear infinite",
+        "come-back": "comeback 20s linear infinite",
       },
+      
     },
   },
   plugins: [],

@@ -19,7 +19,12 @@
     "Navbar":{
         "home":"Ana Sayfa",
         "about":"Hakkımda",
+        "skills":"Yetenekler",
         "projects":"Projeler",
         "contact":"İletişim"
+    },
+    "Skills":{
+        "title":"Yetenekler",
+        "desc":"Bütün Yeteneklerim Burada"
     }
 }

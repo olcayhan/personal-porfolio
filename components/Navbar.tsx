@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="hidden md:block fixed top-0 w-full bg-neutral-50 z-50">
+      <div className="hidden md:block sticky top-0 w-full bg-neutral-50 z-50">
         <div className="flex flex-row justify-between items-center px-24 py-5">
           <h1 className="font-extrabold text-2xl">Olcay.tech</h1>
           <div className="flex flex-row items-center justify-center gap-6">
@@ -37,6 +37,9 @@ export default function Navbar() {
             </a>
             <a className="font-bold text-lg  hover:scale-110" href="#about">
               {t("about")}
+            </a>
+            <a className="font-bold text-lg  hover:scale-110" href="#skills">
+              {t("skills")}
             </a>
             <a className="font-bold text-lg  hover:scale-110" href="#projects">
               {t("projects")}
@@ -100,6 +103,13 @@ export default function Navbar() {
               }}
             >
               {t("about")}
+            </a>
+            <a
+              className="font-bold text-2xl"
+              href="#skills"
+              onClick={() => setMobile(false)}
+            >
+              {t("skills")}
             </a>
             <a
               className="font-bold text-2xl"

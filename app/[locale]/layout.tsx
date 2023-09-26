@@ -35,7 +35,7 @@ export default async function LocaleLayout({
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
-          {children}
+          <main>{children}</main>
         </NextIntlClientProvider>
       </body>
     </html>

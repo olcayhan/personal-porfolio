@@ -43,7 +43,9 @@ const Card = ({ item }: Prop) => {
         <Image
           src={item.images[imgIndex]}
           alt="image"
-          className="md:w-96 md:h-96 w-60 h-60 rounded-md"
+          className="md:w-96 md:h-96 w-60 h-60 rounded-md flex-shrink-0"
+          width={384}
+          height={384}
         />
         <button
           disabled={item.images.length <= imgIndex + 1}
