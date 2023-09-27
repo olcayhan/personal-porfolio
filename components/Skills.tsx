@@ -18,7 +18,7 @@ const Skills = () => {
           <div className="flex justify-center items-center p-8 overflow-x-hidden">
             <div
               style={{ width: SkillData.length * imageBoxSize }}
-              className="flex flex-row items-center flex-shrink-0 animate-come-back hover:pause"
+              className="flex flex-row flex-shrink-0 animate-come-back hover:pause"
             >
               {SkillData.map((item, key) => {
                 return (

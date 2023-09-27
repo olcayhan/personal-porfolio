@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import mypic from "../public/images/image.png";
+import mypic from "../public/images/image.webp";
 import useObserver from "@/hooks/useObserver";
 
 import { useRef } from "react";
@@ -24,7 +24,7 @@ export default function Main() {
         ref={targetRef}
       >
         <div className="flex flex-row justify-center items-center w-full">
-          <div className="w-72 h-72 rounded-full bg-blue-600 relative">
+          <div className="w-72 h-72 rounded-full bg-blue-300 relative">
             <Image src={mypic} alt="image" className="w-72 h-72 rounded-full" />
             <div className="border-[4px] border-black rounded-full w-full h-full absolute top-0 left-0 animate-waving-hand"></div>
           </div>

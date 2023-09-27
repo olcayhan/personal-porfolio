@@ -1,29 +1,29 @@
 import { StaticImageData } from "next/image";
 
-import quizlang from "../public/images/quizlang/quizlang.png";
-import quizlang2 from "../public/images/quizlang/quizlang2.png";
-import quizlang3 from "../public/images/quizlang/quizlang3.png";
-import quizlang4 from "../public/images/quizlang/quizlang4.png";
+import quizlang from "../public/images/quizlang/quizlang.webp";
+import quizlang2 from "../public/images/quizlang/quizlang2.webp";
+import quizlang3 from "../public/images/quizlang/quizlang3.webp";
+import quizlang4 from "../public/images/quizlang/quizlang4.webp";
 
-import todoapp from "../public/images/todoapp/todoapp.png";
-import todoapp2 from "../public/images/todoapp/todoapp2.png";
-import todoapp3 from "../public/images/todoapp/todoapp3.png";
-import todoapp4 from "../public/images/todoapp/todoapp4.png";
+import todoapp from "../public/images/todoapp/todoapp.webp";
+import todoapp2 from "../public/images/todoapp/todoapp2.webp";
+import todoapp3 from "../public/images/todoapp/todoapp3.webp";
+import todoapp4 from "../public/images/todoapp/todoapp4.webp";
 
-import movieapp from "../public/images/movieapp/movieapp.png";
-import movieapp2 from "../public/images/movieapp/movieapp2.png";
-import movieapp3 from "../public/images/movieapp/movieapp3.png";
-import movieapp4 from "../public/images/movieapp/movieapp4.png";
+import movieapp from "../public/images/movieapp/movieapp.webp";
+import movieapp2 from "../public/images/movieapp/movieapp2.webp";
+import movieapp3 from "../public/images/movieapp/movieapp3.webp";
+import movieapp4 from "../public/images/movieapp/movieapp4.webp";
 
-import billtrack from "../public/images/bill-track/bill-track.png";
-import billtrack2 from "../public/images/bill-track/bill-track2.png";
-import billtrack3 from "../public/images/bill-track/bill-track3.png";
-import billtrack4 from "../public/images/bill-track/bill-track4.png";
+import billtrack from "../public/images/bill-track/bill-track.webp";
+import billtrack2 from "../public/images/bill-track/bill-track2.webp";
+import billtrack3 from "../public/images/bill-track/bill-track3.webp";
+import billtrack4 from "../public/images/bill-track/bill-track4.webp";
 
-import calc1 from "../public/images/calculator/calc1.png";
-import calc2 from "../public/images/calculator/calc2.png";
-import calc3 from "../public/images/calculator/calc3.png";
-import calc4 from "../public/images/calculator/calc4.png";
+import calc1 from "../public/images/calculator/calc1.webp";
+import calc2 from "../public/images/calculator/calc2.webp";
+import calc3 from "../public/images/calculator/calc3.webp";
+import calc4 from "../public/images/calculator/calc4.webp";
 
 export type Project = {
   images: StaticImageData[];

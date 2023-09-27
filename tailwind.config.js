@@ -20,12 +20,12 @@ module.exports = {
         },
         comeback: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(calc(-100% / 2))" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       animation: {
         "waving-hand": "wave 10s linear infinite",
-        "come-back": "comeback 20s linear infinite",
+        "come-back": "comeback 8s linear infinite",
       },
       
     },

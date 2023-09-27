@@ -1,18 +1,15 @@
 import { StaticImageData } from "next/image";
 
-import angular from "@/public/icons/angular.svg";
-import react from "@/public/icons/react.svg";
-import nodejs from "@/public/icons/nodejs.svg";
-import nextjs from "@/public/icons/nextjs.svg";
-import javascript from "@/public/icons/javascript.svg";
-import python from "@/public/icons/python.svg";
-import html from "@/public/icons/html.svg";
-import css from "@/public/icons/css.svg";
-import bootstrap from "@/public/icons/bootstrap.svg";
-import sass from "@/public/icons/sass.svg";
+import angular from "@/public/icons/angular.webp";
+import react from "@/public/icons/react.webp";
+import nodejs from "@/public/icons/nodejs.webp";
+import nextjs from "@/public/icons/nextjs.webp";
+import javascript from "@/public/icons/javascript.webp";
+import python from "@/public/icons/python.webp";
+import sass from "@/public/icons/sass.webp";
 
-export const imageBoxSize = 300;
-export const imageBoxSizeMobile = 120;
+export const imageBoxSize = 200;
+export const imageBoxSizeMobile = 100;
 
 export type skillType = {
   src: StaticImageData;
@@ -45,18 +42,6 @@ export const SkillData: skillType[] = [
     alt: "nodejs",
   },
   {
-    src: html,
-    alt: "html",
-  },
-  {
-    src: css,
-    alt: "css",
-  },
-  {
-    src: bootstrap,
-    alt: "bootstrap",
-  },
-  {
     src: sass,
     alt: "sass",
   },
@@ -83,18 +68,6 @@ export const SkillData: skillType[] = [
   {
     src: nodejs,
     alt: "nodejs",
-  },
-  {
-    src: html,
-    alt: "html",
-  },
-  {
-    src: css,
-    alt: "css",
-  },
-  {
-    src: bootstrap,
-    alt: "bootstrap",
   },
   {
     src: sass,
