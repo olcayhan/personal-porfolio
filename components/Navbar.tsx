@@ -184,6 +184,7 @@ export default function Navbar() {
       ${isMobile ? "rotate-180" : "rotate-0"}
       transition-all 
       duration-700
+      dark:text-neutral-50
       `}
       >
         {isMobile ? (
