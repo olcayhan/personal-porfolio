@@ -11,8 +11,8 @@ export default function Projects() {
       id="projects"
       className="flex flex-col justify-center items-center"
     >
-      <div className="flex flex-col justify-center gap-2 w-full py-10">
-        <h1 className="text-blue-600 text-lg font-extrabold">{t("header")}</h1>
+      <div className="flex flex-col justify-center gap-2 w-full py-10 dark:text-neutral-50">
+        <h1 className="text-blue-600 dark:text-blue-300 text-lg font-extrabold">{t("header")}</h1>
         <h1 className="text-3xl font-extrabold">{t("title")}</h1>
       </div>
       <div className="flex flex-col justify-center items-center gap-16">

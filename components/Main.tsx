@@ -24,12 +24,12 @@ export default function Main() {
         ref={targetRef}
       >
         <div className="flex flex-row justify-center items-center w-full">
-          <div className="w-72 h-72 rounded-full bg-blue-300 relative">
+          <div className="w-72 h-72 rounded-full bg-blue-300 dark:bg-blue-600 relative transition-all duration-300">
             <Image src={mypic} alt="image" className="w-72 h-72 rounded-full" />
-            <div className="border-[4px] border-black rounded-full w-full h-full absolute top-0 left-0 animate-waving-hand"></div>
+            <div className="border-[4px] border-black dark:border-blue-600 rounded-full w-full h-full absolute top-0 left-0 animate-waving-hand"></div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center justify-center w-full dark:text-neutral-50">
           <h1 className="text-6xl font-extrabold text-center">{t("title")}</h1>
           <p className="py-4 text-md opacity-80 text-center">{t("content")}</p>
           <div className="flex flex-row items-center justify-center gap-8 py-4">

@@ -19,7 +19,7 @@ const Card = ({ item }: Prop) => {
 
   return (
     <div
-      className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] p-10 shadow-2xl transition-all duration-500 ${
+      className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] rounded-md p-10 shadow-2xl transition-all duration-500 dark:text-neutral-50 ${
         show ? "opacity-100" : "opacity-10"
       }`}
       ref={targetRef}

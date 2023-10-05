@@ -20,8 +20,8 @@ export default function About() {
         <div className={`flex flex-row justify-center items-center w-full`}>
           <Image src={pic} alt="image" className="w-72 h-72 rounded-md" />
         </div>
-        <div className="flex flex-col justify-center gap-4 w-full">
-          <h1 className="text-blue-600 text-lg font-extrabold">
+        <div className="flex flex-col justify-center gap-4 w-full dark:text-neutral-50">
+          <h1 className="text-blue-600 dark:text-blue-300 text-lg font-extrabold">
             {t("header")}
           </h1>
           <h1

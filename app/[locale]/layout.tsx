@@ -34,8 +34,10 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          <main>{children}</main>
+          <div className="dark:bg-gray-900 transition-all duration-300">
+            <Navbar />
+            <main>{children}</main>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -12,8 +12,8 @@ const Skills = () => {
   return (
     <section id="skills" className="flex flex-col justify-center">
       <div className="md:flex hidden flex-col 2xl:flex-row justify-center items-center gap-10">
-        <div className="flex flex-col justify-center gap-4 w-full">
-          <h1 className="text-blue-600 text-lg font-extrabold">{t("title")}</h1>
+        <div className="flex flex-col justify-center gap-4 w-full dark:text-neutral-50">
+          <h1 className="text-blue-600 dark:text-blue-300 text-lg font-extrabold">{t("title")}</h1>
           <h1 className="text-3xl font-extrabold">{t("desc")}</h1>
           <div className="flex justify-center items-center p-8 overflow-x-hidden">
             <div
@@ -28,7 +28,7 @@ const Skills = () => {
                       alt={item.alt}
                       width={imageBoxSize / 2}
                       height={imageBoxSize / 2}
-                      className="grayscale hover:grayscale-0 transition duration-300 cursor-pointer"
+                      className="grayscale hover:grayscale-0 dark:grayscale-0 hover:dark:grayscale transition duration-300 cursor-pointer"
                     />
                   </div>
                 );
