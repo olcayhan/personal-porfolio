@@ -38,7 +38,7 @@ const Skills = () => {
         </div>
       </div>
       <div className="md:hidden flex flex-col 2xl:flex-row justify-center items-center gap-10">
-        <div className="flex flex-col justify-center gap-4 w-full">
+        <div className="flex flex-col justify-center gap-4 w-full dark:text-neutral-50">
           <h1 className="text-blue-600 text-lg font-extrabold">{t("title")}</h1>
           <h1 className="text-3xl font-extrabold">{t("desc")}</h1>
           <div className="flex justify-center items-center p-8 overflow-x-hidden">
