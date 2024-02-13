@@ -20,11 +20,6 @@ import billtrack2 from "../public/images/bill-track/bill-track2.webp";
 import billtrack3 from "../public/images/bill-track/bill-track3.webp";
 import billtrack4 from "../public/images/bill-track/bill-track4.webp";
 
-import calc1 from "../public/images/calculator/calc1.webp";
-import calc2 from "../public/images/calculator/calc2.webp";
-import calc3 from "../public/images/calculator/calc3.webp";
-import calc4 from "../public/images/calculator/calc4.webp";
-
 export type Project = {
   images: StaticImageData[];
   url: string;
@@ -66,13 +61,5 @@ export const projects: Project[] = [
     languages: ["React.js", "Bootstrap", "CSS", "Node.js"],
     desc: "This repository contains a Bill Tracking App, designed to help users manage and keep track of their bills and expenses effectively.",
     title: "Bill Tracking Service",
-  },
-  {
-    images: [calc1, calc2, calc3, calc4],
-    url: "https://github.com/olcayhan/calculatorApp",
-    href: "https://calculator-app-demo.vercel.app/",
-    languages: ["Angular", "SCSS", "Bootstrap"],
-    desc: "This is a simple calculator app that allows you to perform basic mathematical operations between two numbers. You can perform addition, subtraction, multiplication, and division operations.",
-    title: "Calculator App",
   },
 ];
