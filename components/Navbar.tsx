@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="hidden md:block sticky top-0 w-full bg-neutral-50z-5">
+      <div className="hidden md:block sticky top-0 w-full bg-neutral-50 dark:bg-gray-800 z-50">
         <div className="flex flex-row justify-between items-center px-24 py-5 dark:text-neutral-50">
           <Link className="font-extrabold text-2xl" href="/">
             Olcay.tech
