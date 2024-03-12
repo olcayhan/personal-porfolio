@@ -20,6 +20,11 @@ import billtrack2 from "../public/images/bill-track/bill-track2.webp";
 import billtrack3 from "../public/images/bill-track/bill-track3.webp";
 import billtrack4 from "../public/images/bill-track/bill-track4.webp";
 
+
+import ecommerce1 from "../public/images/e-commerce/ecomm1.webp";
+import ecommerce2 from "../public/images/e-commerce/ecomm2.webp";
+import ecommerce3 from "../public/images/e-commerce/ecomm3.webp";
+
 export type Project = {
   images: StaticImageData[];
   url: string;
@@ -30,6 +35,14 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    images: [ecommerce1, ecommerce2, ecommerce3],
+    url: "https://github.com/olcayhan/e-commerce",
+    href: "https://e-commerce-demo-project-v1.vercel.app/",
+    languages: ["Next.js", "Chakra.UI"],
+    desc: "E-Commerce App is a web application for online shopping. It allows users to browse products, add them to the cart, and purchase them. The app also includes a user authentication system.",
+    title: "E-Commerce App",
+  },
   {
     images: [quizlang, quizlang2, quizlang3, quizlang4],
     url: "https://github.com/olcayhan/quizlet-clone",
@@ -61,5 +74,5 @@ export const projects: Project[] = [
     languages: ["React.js", "Bootstrap", "CSS", "Node.js"],
     desc: "This repository contains a Bill Tracking App, designed to help users manage and keep track of their bills and expenses effectively.",
     title: "Bill Tracking Service",
-  },
+  }
 ];
