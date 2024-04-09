@@ -24,7 +24,7 @@ export default function Main() {
         ref={targetRef}
       >
         <div className="flex flex-row justify-center items-center w-full">
-          <div className="w-72 h-72 rounded-full bg-blue-300 dark:bg-blue-600 relative transition-all duration-300">
+          <div className="w-72 h-72 rounded-full bg-neutral-900 dark:bg-transparent relative transition-all duration-300">
             <Image src={mypic} alt="image" className="w-72 h-72 rounded-full" />
             <div className="border-[4px] border-black dark:border-blue-600 rounded-full w-full h-full absolute top-0 left-0 animate-waving-hand"></div>
           </div>

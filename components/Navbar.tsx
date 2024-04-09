@@ -14,6 +14,11 @@ export default function Navbar() {
   const t = useTranslations("Navbar");
 
   useEffect(() => {
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") {
+      setDark(true);
+      document.documentElement.classList.add("dark");
+    }
     const handleScroll = () => {
       const currentPosition = window.scrollY || window.pageYOffset;
       setScrollPosition(currentPosition);
@@ -29,10 +34,13 @@ export default function Navbar() {
   const toggleDarkMode = () => {
     if (isDark) {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     } else {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     }
     setDark(!isDark);
+    console.log();
   };
 
   return (
