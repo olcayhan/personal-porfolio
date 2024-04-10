@@ -43,6 +43,15 @@ export default function Navbar() {
     console.log();
   };
 
+  const toggleCloseMobile = () => {
+    setMobile(false);
+    document.body.style.overflow = "auto";
+  };
+  const toggleOpenMobile = () => {
+    setMobile(true);
+    document.body.style.overflow = "hidden";
+  };
+
   return (
     <>
       <div className="hidden md:block sticky top-0 w-full bg-neutral-50 dark:bg-gray-800 z-50">
@@ -104,12 +113,12 @@ export default function Navbar() {
             w-full
             h-full 
             z-50 
-            backdrop-blur
+            backdrop-blur-xl
             transition-all
             duration-500
             `}
       >
-        <div className="flex flex-col justify-center items-center px-24 py-5 h-full gap-10 dark:text-neutral-50">
+        <div className="flex flex-col justify-center items-center px-24 py-5 h-full gap-10 text-neutral-950 dark:text-neutral-50">
           <Link className="font-extrabold text-4xl" href="/">
             Olcay.tech
           </Link>
@@ -117,9 +126,7 @@ export default function Navbar() {
             <a
               className="font-bold text-2xl"
               href="#home"
-              onClick={() => {
-                setMobile(false);
-              }}
+              onClick={toggleCloseMobile}
             >
               {t("home")}
             </a>
@@ -135,25 +142,21 @@ export default function Navbar() {
             <a
               className="font-bold text-2xl"
               href="#skills"
-              onClick={() => setMobile(false)}
+              onClick={toggleCloseMobile}
             >
               {t("skills")}
             </a>
             <a
               className="font-bold text-2xl"
               href="#projects"
-              onClick={() => {
-                setMobile(false);
-              }}
+              onClick={toggleCloseMobile}
             >
               {t("projects")}
             </a>
             <a
               className="font-bold text-2xl"
               href="#contact"
-              onClick={() => {
-                setMobile(false);
-              }}
+              onClick={toggleCloseMobile}
             >
               {t("contact")}
             </a>
@@ -199,17 +202,13 @@ export default function Navbar() {
           <AiOutlineClose
             size={30}
             className="cursor-pointer"
-            onClick={() => {
-              setMobile(!isMobile);
-            }}
+            onClick={toggleCloseMobile}
           />
         ) : (
           <FaBars
             size={30}
             className="cursor-pointer"
-            onClick={() => {
-              setMobile(!isMobile);
-            }}
+            onClick={toggleOpenMobile}
           />
         )}
       </div>
@@ -220,7 +219,7 @@ export default function Navbar() {
         fixed 
         right-5 
         bottom-5 
-        z-49 
+        z-[100] 
         cursor-pointer 
         border-neutral-800 
         border-[1px] 
