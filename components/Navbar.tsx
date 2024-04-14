@@ -56,8 +56,8 @@ export default function Navbar() {
     <>
       <div className="hidden md:block sticky top-0 w-full bg-neutral-50 dark:bg-gray-800 z-50">
         <div className="flex flex-row justify-between items-center px-24 py-5 dark:text-neutral-50">
-          <Link className="font-extrabold text-2xl" href="/">
-            Olcay.tech
+          <Link className="font-light text-2xl" href="/">
+            /home/olcayhan
           </Link>
           <div className="flex flex-row items-center justify-center gap-6">
             <a className="font-bold text-lg  hover:scale-110" href="#home">
@@ -119,8 +119,8 @@ export default function Navbar() {
             `}
       >
         <div className="flex flex-col justify-center items-center px-24 py-5 h-full gap-10 text-neutral-950 dark:text-neutral-50">
-          <Link className="font-extrabold text-4xl" href="/">
-            Olcay.tech
+          <Link className="font-light text-4xl" href="/">
+            /home/olcayhan
           </Link>
           <div className="flex flex-col items-center justify-center gap-10">
             <a
