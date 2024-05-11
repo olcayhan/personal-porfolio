@@ -1,5 +1,5 @@
 "use client";
-import Link from "next-intl/link";
+import { Link } from "@/navigation";
 import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { AiOutlineArrowUp, AiOutlineClose } from "react-icons/ai";
