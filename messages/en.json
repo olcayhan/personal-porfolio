@@ -1,31 +1,43 @@
 {
-    "Main":{
-        "title":"Software Developer",
-        "content":"Hello! I'm Olcay Han, a software developer with 2 years of experience."
+    "Main": {
+        "title": "Software Developer",
+        "content": "Hello! I'm Olcay Han, a software developer with 2 years of experience. I improved myself in web development, aiming for user-friendly solutions. I stay updated with the latest tech trends and welcome networking opportunities. Let's connect and explore possibilities!",
+        "talk": "Let's Talk"
     },
-    "About":{
-        "header":"About Me",
-        "title":"Software Developer",
-        "content":"Hello! I'm Olcay Han, a software developer with 2 years of experience. I improved myself in web development, aiming for user-friendly solutions. I stay updated with the latest tech trends and welcome networking opportunities. Let's connect and explore possibilities!"
+    "Skills": {
+        "title": "Skills",
+        "desc": "All my skills are here",
+        "usedTechs": "My Technology Stack"
     },
-    "Contact":{
-        "header":"Contact",
-        "title":"Get in touch me"
+    "Contact": {
+        "header": "Contact",
+        "title": "Get in touch me",
+        "subtitle": "Feel free to reach out for new projects, collaborations, or just to say hello!",
+        "quickContact": "Quick Contact",
+        "quickContactDesc": "For urgent matters, you can reach me directly via Email.",
+        "email": "Email",
+        "contactInfo": "Contact Information",
+        "sendMessage": "Send Message",
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email",
+        "subjectPlaceholder": "Subject",
+        "messagePlaceholder": "Your Message...",
+        "sendButton": "Send Message",
+        "sending": "Sending...",
+        "successMessage": "Your message has been sent! I'll get back to you as soon as possible."
     },
-    "Projects":{
-        "header":"Projects",
-        "title":"All my projects are here"
-    }
-    ,
-    "Navbar":{
-        "home":"Home",
-        "about":"About",
-        "skills":"Skills",
-        "projects":"Projects",
-        "contact":"Contact"
+    "Projects": {
+        "header": "Projects",
+        "title": "All my projects are here",
+        "technologies": "Technologies",
+        "viewCode": "Code",
+        "viewDemo": "Demo"
     },
-    "Skills":{
-        "title":"Skills",
-        "desc":"All My Skills are here"
+    "Navbar": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
     }
 }

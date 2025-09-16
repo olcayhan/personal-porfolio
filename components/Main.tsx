@@ -1,55 +1,69 @@
 "use client";
-import Image from "next/image";
-import mypic from "../public/images/image.webp";
 import useObserver from "@/hooks/useObserver";
-
 import { useRef } from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { HiMail } from "react-icons/hi";
 import { useTranslations } from "next-intl";
 
 export default function Main() {
   const targetRef = useRef(null);
   const show = useObserver(targetRef);
-
   const t = useTranslations("Main");
+
   return (
     <section
       id="home"
-      className="flex flex-col justify-center items-center"
+      className="min-h-screen flex items-center justify-center px-6"
     >
       <div
-        className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 ${
-          show ? "opacity-100" : "opacity-0"
-        } transition-all duration-500`}
+        className={`text-center space-y-8 transition-all duration-700 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         ref={targetRef}
       >
-        <div className="flex flex-row justify-center items-center w-full">
-          <div className="w-72 h-72 rounded-full bg-neutral-900 dark:bg-transparent relative transition-all duration-300">
-            <Image src={mypic} alt="image" className="w-72 h-72 rounded-full" />
-            <div className="border-[4px] border-black dark:border-blue-600 rounded-full w-full h-full absolute top-0 left-0 animate-waving-hand"></div>
-          </div>
+        {/* Name */}
+        <div>
+          <h1 className="text-5xl md:text-7xl font-light text-navy dark:text-cream">
+            Olcay Han
+            <br />
+            <span className="font-normal">Korkut</span>
+          </h1>
+          <p className="text-xl mt-4 text-navy/60 dark:text-lightBlue/80 font-light">
+            Full Stack Developer
+          </p>
         </div>
-        <div className="flex flex-col items-center justify-center w-full dark:text-neutral-50">
-          <h1 className="text-6xl font-extrabold text-center">{t("title")}</h1>
-          <p className="py-4 text-md opacity-80 text-center">{t("content")}</p>
-          <div className="flex flex-row items-center justify-center gap-8 py-4">
-            <a
-              className="flex flex-row gap-2 items-center justify-center hover:underline"
-              href="https://www.linkedin.com/in/olcayhan/"
-              target="_blank"
-            >
-              <AiFillLinkedin size={30} />
-              <p className="font-semibold transition">Linkedin</p>
-            </a>
-            <a
-              className="flex flex-row gap-2 items-center justify-center hover:underline"
-              href="https://github.com/olcayhan"
-              target="_blank"
-            >
-              <AiFillGithub size={30} />
-              <p className="font-semibold">Github</p>
-            </a>
-          </div>
+
+        {/* Description */}
+        <p className="text-lg text-navy/80 dark:text-lightBlue/90 max-w-2xl mx-auto leading-relaxed font-light">
+          {t("content")}
+        </p>
+
+        {/* Contact Button */}
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-navy dark:bg-lightBlue text-cream dark:text-navy rounded-full font-medium hover:bg-blue dark:hover:bg-blue dark:hover:text-cream transition-all duration-300"
+        >
+          <HiMail className="w-5 h-5" />
+          {t("talk")}
+        </a>
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-6">
+          <a
+            href="https://www.linkedin.com/in/olcayhan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-navy/60 dark:text-lightBlue/80 hover:text-navy dark:hover:text-lightBlue transition-colors duration-300"
+          >
+            <AiFillLinkedin className="w-6 h-6" />
+          </a>
+          <a
+            href="https://github.com/olcayhan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-navy/60 dark:text-lightBlue/80 hover:text-navy dark:hover:text-lightBlue transition-colors duration-300"
+          >
+            <AiFillGithub className="w-6 h-6" />
+          </a>
         </div>
       </div>
     </section>

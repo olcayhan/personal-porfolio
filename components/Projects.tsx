@@ -3,22 +3,35 @@
 import { useTranslations } from "next-intl";
 import Card from "./Card";
 import { projects } from "@/data/project";
+import useObserver from "@/hooks/useObserver";
+import { useRef } from "react";
 
 export default function Projects() {
   const t = useTranslations("Projects");
+  const targetRef = useRef(null);
+  const show = useObserver(targetRef);
+
   return (
     <section
       id="projects"
-      className="flex flex-col justify-center items-center"
+      className="min-h-screen flex flex-col justify-center items-center"
     >
-      <div className="flex flex-col justify-center gap-2 w-full py-10 dark:text-neutral-50">
-        <h1 className="text-blue-600 dark:text-blue-300 text-lg font-extrabold">{t("header")}</h1>
-        <h1 className="text-3xl font-extrabold">{t("title")}</h1>
-      </div>
-      <div className="flex flex-col justify-center items-center gap-16">
-        {projects.map((item, key) => (
-          <Card item={item} key={key} />
-        ))}
+      <div
+        className={`w-full max-w-6xl mx-auto px-6 sm:px-8 transition-all duration-700 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        ref={targetRef}
+      >
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-navy dark:text-cream">
+            {t("title")}
+          </h2>
+        </div>
+
+        <div className="space-y-16 lg:space-y-20">
+          {projects.map((project, index) => (
+            <Card key={index} item={project} />
+          ))}
+        </div>
       </div>
     </section>
   );

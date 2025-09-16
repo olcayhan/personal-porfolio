@@ -2,11 +2,11 @@
 
 import { Project } from "@/data/project";
 import useObserver from "@/hooks/useObserver";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import { AiFillGithub } from "react-icons/ai";
-import { BsBoxArrowInUpRight } from "react-icons/bs";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { HiCode, HiExternalLink, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 interface Prop {
   item: Project;
@@ -16,88 +16,130 @@ const Card = ({ item }: Prop) => {
   const [imgIndex, setImgIndex] = useState(0);
   const targetRef = useRef(null);
   const show = useObserver(targetRef);
+  const t = useTranslations("Projects")
+  const locale = useLocale() as 'tr' | 'en';
+
+  const nextImage = () => {
+    setImgIndex((prev) => (prev + 1) % item.images.length);
+  };
+
+  const prevImage = () => {
+    setImgIndex((prev) => (prev - 1 + item.images.length) % item.images.length);
+  };
 
   return (
     <div
-      className={`flex flex-col 2xl:flex-row justify-center items-center gap-10 border-[1px] rounded-md p-10 shadow-2xl transition-all duration-500 dark:text-neutral-50 ${
-        show ? "opacity-100" : "opacity-10"
-      }`}
       ref={targetRef}
+      className={`transition-all duration-700 transform ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
     >
-      <div className="flex flex-row justify-center items-center w-full gap-5">
-        <button
-          disabled={imgIndex <= 0}
-          onClick={() => {
-            imgIndex > 0 && setImgIndex(imgIndex - 1);
-          }}
-          className={`
-          ${imgIndex <= 0 && "opacity-40"}
-            border-[1px]
-           border-neutral-700 
-            p-1 
-            rounded-md 
-            bg-transparent`}
-        >
-          <MdKeyboardArrowLeft size={30} />
-        </button>
-        <Image
-          src={item.images[imgIndex]}
-          alt="image"
-          className="md:w-96 md:h-96 w-60 h-60 rounded-md flex-shrink-0"
-          width={384}
-          height={384}
-        />
-        <button
-          disabled={item.images.length <= imgIndex + 1}
-          onClick={() => {
-            setImgIndex(imgIndex + 1);
-          }}
-          className={`
-          ${item.images.length <= imgIndex + 1 && "opacity-40"}
-            border-[1px]
-           border-neutral-700 
-            p-1 
-            rounded-md 
-            bg-transparent`}
-        >
-          <MdKeyboardArrowRight size={30} />
-        </button>
-      </div>
-      <div className="flex flex-col justify-center items-center gap-4 w-full">
-        <h1 className="text-lg font-extrabold">{item.title}</h1>
-        <p className="text-md opacity-90">{item.desc}</p>
-        <div className="flex flex-row items-center justify-center gap-4">
-          {item.languages.map((item, key) => {
-            return (
-              <p key={key} className="font-extrabold text-md">
-                {item}
-              </p>
-            );
-          })}
-        </div>
 
-        <div className="flex flex-row items-center justify-center gap-16 p-6">
-          <a
-            className="flex flex-row gap-2 items-center justify-center hover:underline"
-            href={item.url}
-            target="_blank"
-          >
-            <AiFillGithub size={30} />
-            <p className="font-extrabold text-lg">Code</p>
-          </a>
-          {item.href && (
-            <a
-              className="flex flex-row gap-2 items-center justify-center hover:underline"
-              href={item.href}
-              target="_blank"
-            >
-              <BsBoxArrowInUpRight size={30} />
-              <p className="font-extrabold text-lg">Demo</p>
-            </a>
-          )}
+      <div className="bg-cream/50 dark:bg-navy/20 border border-lightBlue/20 rounded-3xl p-8 lg:p-12 hover:border-blue/40 transition-all duration-300">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="relative order-2 lg:order-1">
+            <div className="relative aspect-video bg-lightBlue/10 dark:bg-lightBlue/5 rounded-2xl overflow-hidden group">
+              <Image
+                src={item.images[imgIndex]}
+                alt={item.title[locale]}
+                fill
+                className="object-cover"
+              />
+
+              {item.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-navy/80 dark:bg-lightBlue/80 text-cream dark:text-navy rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-navy dark:hover:bg-lightBlue z-10"
+                    aria-label="Previous image"
+                  >
+                    <HiChevronLeft className="w-5 h-5" />
+                  </button>
+
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-navy/80 dark:bg-lightBlue/80 text-cream dark:text-navy rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-navy dark:hover:bg-lightBlue z-10"
+                    aria-label="Next image"
+                  >
+                    <HiChevronRight className="w-5 h-5" />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {item.images.length > 1 && (
+              <div className="flex justify-center mt-4 gap-2">
+                {item.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setImgIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === imgIndex
+                      ? 'bg-navy dark:bg-lightBlue'
+                      : 'bg-navy/30 dark:bg-lightBlue/30 hover:bg-navy/60 dark:hover:bg-lightBlue/60'
+                      }`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="space-y-6 order-1 lg:order-2">
+
+            {/* Simple Title */}
+            <h3 className="text-2xl lg:text-3xl font-light text-navy dark:text-cream">
+              {item.title[locale]}
+            </h3>
+
+            {/* Simple Description */}
+            <p className="text-base lg:text-lg text-navy/70 dark:text-lightBlue/90 leading-relaxed font-light">
+              {item.desc[locale]}
+            </p>
+
+            {/* Clean Technologies */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-navy/60 dark:text-lightBlue/70 uppercase tracking-wider">
+                {t("technologies")}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {item.languages.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 text-sm font-medium bg-navy/10 dark:bg-lightBlue/10 text-navy dark:text-lightBlue rounded-full border border-navy/20 dark:border-lightBlue/20"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Simple Action Buttons */}
+            <div className="flex gap-4 pt-4">
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-navy dark:bg-lightBlue text-cream dark:text-navy rounded-full font-medium hover:bg-blue dark:hover:bg-blue dark:hover:text-cream transition-all duration-300"
+              >
+                <HiCode className="w-4 h-4" />
+                <span>{t("viewCode")}</span>
+              </a>
+
+              {item.href && (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-navy/30 dark:border-lightBlue/30 text-navy dark:text-lightBlue rounded-full font-medium hover:border-navy dark:hover:border-lightBlue transition-all duration-300"
+                >
+                  <HiExternalLink className="w-4 h-4" />
+                  <span>{t("viewDemo")}</span>
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default Card;

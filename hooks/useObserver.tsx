@@ -3,36 +3,37 @@
 import { useEffect, useState } from "react";
 
 const useObserver = (targetRef: any) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    const currentTarget = targetRef.current;
+    
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.1, // Daha erken tetiklenmesi için threshold'u düşürdük
     };
 
     const callback = (entries: any, observer: any) => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
           setShow(true);
-        } else {
-          setShow(false);
         }
+        // else bloğunu kaldırdık çünkü bir kez görüldükten sonra gizlenmemeli
       });
     };
 
     const observer = new IntersectionObserver(callback, options);
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
+    if (currentTarget) {
+      observer.observe(currentTarget);
     }
 
     return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
       }
     };
-  }, []);
+  }, [targetRef]);
 
   return show;
 };

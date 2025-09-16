@@ -4,11 +4,13 @@ import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { AiOutlineArrowUp, AiOutlineClose } from "react-icons/ai";
 import { useLocale, useTranslations } from "next-intl";
+import { HiMoon, HiSun } from "react-icons/hi";
 
 export default function Navbar() {
   const [isMobile, setMobile] = useState(false);
   const [isDark, setDark] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const locale = useLocale();
   const t = useTranslations("Navbar");
@@ -19,16 +21,15 @@ export default function Navbar() {
       setDark(true);
       document.documentElement.classList.add("dark");
     }
+
     const handleScroll = () => {
       const currentPosition = window.scrollY || window.pageYOffset;
       setScrollPosition(currentPosition);
+      setIsScrolled(currentPosition > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleDarkMode = () => {
@@ -40,198 +41,200 @@ export default function Navbar() {
       localStorage.setItem("theme", "dark");
     }
     setDark(!isDark);
-    console.log();
   };
 
   const toggleCloseMobile = () => {
     setMobile(false);
     document.body.style.overflow = "auto";
   };
+
   const toggleOpenMobile = () => {
     setMobile(true);
     document.body.style.overflow = "hidden";
   };
 
+  const navItems = [
+    { href: "#home", label: t("home") },
+    { href: "#skills", label: t("skills") },
+    { href: "#projects", label: t("projects") },
+    { href: "#contact", label: t("contact") },
+  ];
+
   return (
     <>
-      <div className="hidden md:block sticky top-0 w-full bg-neutral-50 dark:bg-gray-800 z-50">
-        <div className="flex flex-row justify-between items-center px-24 py-5 dark:text-neutral-50">
-          <Link className="font-light text-2xl" href="/">
-            /home/olcayhan
+      {/* Desktop Navbar */}
+      <nav className={`
+        fixed top-0 w-full z-50 transition-all duration-500 
+        ${isScrolled
+          ? 'bg-cream/80 dark:bg-navy/80 backdrop-blur-2xl shadow-glass border-b border-white/20'
+          : 'bg-transparent'
+        }
+      `}>
+        <div className="hidden md:flex items-center justify-between px-8 lg:px-16 py-4">
+          {/* Logo */}
+          <Link
+            className="text-2xl font-bold bg-navy dark:bg-cream bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+            href="/"
+          >
+            &lt;olcayhan /&gt;
           </Link>
-          <div className="flex flex-row items-center justify-center gap-6">
-            <a className="font-bold text-lg  hover:scale-110" href="#home">
-              {t("home")}
-            </a>
-            <a className="font-bold text-lg  hover:scale-110" href="#about">
-              {t("about")}
-            </a>
-            <a className="font-bold text-lg  hover:scale-110" href="#skills">
-              {t("skills")}
-            </a>
-            <a className="font-bold text-lg  hover:scale-110" href="#projects">
-              {t("projects")}
-            </a>
-            <a className="font-bold text-lg  hover:scale-110" href="#contact">
-              {t("contact")}
-            </a>
-            {locale == "tr" ? (
-              <Link
-                className="font-bold text-lg hover:scale-110"
-                href="/"
-                locale="en"
-              >
-                EN
-              </Link>
-            ) : (
-              <Link
-                className="font-bold text-lg hover:scale-110"
-                href="/"
-                locale="tr"
-              >
-                TR
-              </Link>
-            )}
 
+          {/* Navigation Links */}
+          <div className="flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                className="relative text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 group"
+                href={item.href}
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+
+            {/* Language Toggle */}
+            <div className="relative">
+              {locale === "tr" ? (
+                <Link
+                  className="px-3 py-2 text-sm font-semibold bg-gradient-primary text-white rounded-full hover:scale-105 transition-transform duration-300"
+                  href="/"
+                  locale="en"
+                >
+                  EN
+                </Link>
+              ) : (
+                <Link
+                  className="px-3 py-2 text-sm font-semibold bg-gradient-primary text-white rounded-full hover:scale-105 transition-transform duration-300"
+                  href="/"
+                  locale="tr"
+                >
+                  TR
+                </Link>
+              )}
+            </div>
+
+            {/* Dark Mode Toggle */}
             <button
-              className="relative border-[2px] rounded-3xl dark:border-neutral-200  border-neutral-950 w-14 h-8 shadow"
               onClick={toggleDarkMode}
+              className="p-3 rounded-full bg-gradient-primary text-white hover:scale-110 transition-all duration-300 shadow-glow hover:shadow-glow-lg"
             >
-              <div className="absolute left-[2px] top-[2px] w-6 h-6 border-neutral-800 dark:border-neutral-200 border-[2px] rounded-full shadow dark:translate-x-full transition-all duration-300"></div>
+              {isDark ? <HiSun size={20} /> : <HiMoon size={20} />}
             </button>
           </div>
         </div>
-      </div>
 
-      <div
-        className={`
-            block
-            md:hidden
-            fixed
-            top-0
-            ${isMobile ? "left-0" : "-left-full"}
-            w-full
-            h-full 
-            z-50 
-            backdrop-blur-xl
-            transition-all
-            duration-500
-            `}
-      >
-        <div className="flex flex-col justify-center items-center px-24 py-5 h-full gap-10 text-neutral-950 dark:text-neutral-50">
-          <Link className="font-light text-4xl" href="/">
-            /home/olcayhan
+        {/* Mobile Navbar */}
+        <div className="md:hidden flex items-center justify-between px-6 py-4">
+          <Link
+            className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+            href="/"
+          >
+            &lt;olcayhan /&gt;
           </Link>
-          <div className="flex flex-col items-center justify-center gap-10">
-            <a
-              className="font-bold text-2xl"
-              href="#home"
-              onClick={toggleCloseMobile}
-            >
-              {t("home")}
-            </a>
-            <a
-              className="font-bold text-2xl"
-              href="#about"
-              onClick={() => {
-                setMobile(false);
-              }}
-            >
-              {t("about")}
-            </a>
-            <a
-              className="font-bold text-2xl"
-              href="#skills"
-              onClick={toggleCloseMobile}
-            >
-              {t("skills")}
-            </a>
-            <a
-              className="font-bold text-2xl"
-              href="#projects"
-              onClick={toggleCloseMobile}
-            >
-              {t("projects")}
-            </a>
-            <a
-              className="font-bold text-2xl"
-              href="#contact"
-              onClick={toggleCloseMobile}
-            >
-              {t("contact")}
-            </a>
 
-            {locale == "tr" ? (
-              <Link
-                className="font-bold text-lg hover:scale-110"
-                href="/"
-                locale="en"
-              >
-                EN
-              </Link>
-            ) : (
-              <Link className="font-bold text-lg" href="/" locale="tr">
-                TR
-              </Link>
-            )}
+          <div className="flex items-center gap-4">
             <button
-              className="relative border-[2px] rounded-3xl dark:border-neutral-200  border-neutral-950 w-14 h-8 shadow"
               onClick={toggleDarkMode}
+              className="p-2 rounded-full bg-gradient-primary text-white hover:scale-110 transition-all duration-300"
             >
-              <div className="absolute left-[2px] top-[2px] w-6 h-6 border-neutral-800 dark:border-neutral-200 border-[2px] rounded-full shadow dark:translate-x-full transition-all duration-300"></div>
+              {isDark ? <HiSun size={18} /> : <HiMoon size={18} />}
+            </button>
+
+            <button
+              onClick={toggleOpenMobile}
+              className="p-2 rounded-full bg-gradient-primary text-white hover:scale-110 transition-all duration-300"
+            >
+              <FaBars size={18} />
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
+      {/* Mobile Menu Overlay */}
       <div
         className={`
-      block 
-      md:hidden 
-      fixed 
-      top-5 
-      right-5 
-      z-50 
-      ${isMobile ? "rotate-180" : "rotate-0"}
-      transition-all 
-      duration-700
-      dark:text-neutral-50
-      `}
-      >
-        {isMobile ? (
-          <AiOutlineClose
-            size={30}
-            className="cursor-pointer"
-            onClick={toggleCloseMobile}
-          />
-        ) : (
-          <FaBars
-            size={30}
-            className="cursor-pointer"
-            onClick={toggleOpenMobile}
-          />
-        )}
-      </div>
-
-      <button
-        className={`
-        ${scrollPosition > 100 ? "block" : "hidden"}
-        fixed 
-        right-5 
-        bottom-5 
-        z-[100] 
-        cursor-pointer 
-        border-neutral-800 
-        border-[1px] 
-        p-2 
-        rounded-md
-        dark:text-neutral-50
-        dark:border-neutral-50
+          md:hidden fixed inset-0 z-50 transition-all duration-500 
+          ${isMobile ? 'opacity-100 visible' : 'opacity-0 invisible'}
         `}
-        onClick={() => window.scrollTo(0, 0)}
       >
-        <AiOutlineArrowUp size={30} />
-      </button>
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          onClick={toggleCloseMobile}
+        />
+
+        {/* Menu Panel */}
+        <div className={`
+          absolute right-0 top-0 h-full w-80 max-w-[85vw] 
+          bg-cream/90 dark:bg-navy/90 
+          shadow-glass border-l border-white/20
+          transform transition-transform duration-500
+          ${isMobile ? 'translate-x-0' : 'translate-x-full'}
+        `}>
+          {/* Close Button */}
+          <div className="flex justify-end p-6">
+            <button
+              onClick={toggleCloseMobile}
+              className="p-2 rounded-full bg-gradient-primary text-white hover:scale-110 transition-all duration-300"
+            >
+              <AiOutlineClose size={20} />
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="px-6 space-y-6">
+            {navItems.map((item, index) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={toggleCloseMobile}
+                className={`
+                  block text-lg font-semibold text-gray-700 dark:text-gray-300 
+                  hover:text-primary-600 dark:hover:text-primary-400 
+                  transition-all duration-300 transform hover:translate-x-2
+                  animate-slide-in-right
+                `}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {item.label}
+              </a>
+            ))}
+
+            {/* Language Toggle - Mobile */}
+            <div className="pt-6">
+              {locale === "tr" ? (
+                <Link
+                  className="inline-block px-6 py-3 text-sm font-semibold bg-gradient-primary text-white rounded-full hover:scale-105 transition-transform duration-300"
+                  href="/"
+                  locale="en"
+                  onClick={toggleCloseMobile}
+                >
+                  Switch to English
+                </Link>
+              ) : (
+                <Link
+                  className="inline-block px-6 py-3 text-sm font-semibold bg-gradient-primary text-white rounded-full hover:scale-105 transition-transform duration-300"
+                  href="/"
+                  locale="tr"
+                  onClick={toggleCloseMobile}
+                >
+                  Türkçe&apos;ye Geç
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll to Top Button */}
+      {scrollPosition > 500 && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-8 right-8 p-4 bg-navy text-white rounded-full shadow-glow hover:shadow-glow-lg hover:scale-110 transition-all duration-300 z-40"
+        >
+          <AiOutlineArrowUp size={20} />
+        </button>
+      )}
     </>
   );
 }
