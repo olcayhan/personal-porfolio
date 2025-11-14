@@ -38,12 +38,23 @@ const Card = ({ item }: Prop) => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-video bg-lightBlue/10 dark:bg-lightBlue/5 rounded-2xl overflow-hidden group">
-              <Image
-                src={item.images[imgIndex]}
-                alt={item.title[locale]}
-                fill
-                className="object-cover"
-              />
+              <div className="relative w-full h-full">
+                {item.images.map((image, index) => (
+                  <Image
+                    key={index}
+                    src={image}
+                    alt={item.title[locale]}
+                    fill
+                    className={`object-cover transition-all duration-500 ease-in-out ${
+                      index === imgIndex
+                        ? "opacity-100 translate-x-0"
+                        : index < imgIndex
+                        ? "opacity-0 -translate-x-full"
+                        : "opacity-0 translate-x-full"
+                    }`}
+                  />
+                ))}
+              </div>
 
               {item.images.length > 1 && (
                 <>
